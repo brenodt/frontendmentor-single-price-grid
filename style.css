@@ -2,9 +2,12 @@
 
 :root {
   --cyan: hsl(179, 62%, 43%);
+  --light-cyan: hsl(179, 47%, 52%);
   --yellow: hsl(71, 73%, 54%);
   --grey: hsl(204, 43%, 93%);
   --blue: hsl(218, 22%, 67%);
+
+  --card-margin: 40px;
 }
 
 * {
@@ -16,8 +19,133 @@
 body {
   font-family: 'Karla', sans-serif;
   font-size: 16px;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  /*width: 100%;*/
+  height: available;
   background-color: var(--grey);
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  line-height: 1.2rem;
+}
+
+button {
+  outline: none;
+}
+
+section.card {
+  background-color: white;
+  border-radius: 10px;
+  width: 60vw;
+  height: 80vh;
+  max-width: 800px;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-section {
+  margin: var(--card-margin);
+}
+
+.top-section h1 {
+  color: var(--cyan);
+}
+
+.top-section h2 {
+  color: var(--yellow);
+  font-size: 16px;
+  margin: 0 0 10px 0;
+}
+
+.top-section p {
+  font-size: 14px;
+  color: var(--blue);
+}
+
+.bottom-section {
+  flex: 1;
+  display: flex;
+  color: white;
+}
+
+.bottom-section h2 {
+  font-size: 16px;
+  margin: 0 0 20px 0;
+}
+
+.bottom-section p {
+  font-size: 14px;
+  margin: 10px 0;
+  opacity: 0.6;
+}
+
+.bottom-section .cta {
+  background-color: var(--cyan);
+  padding: var(--card-margin);
+  flex: 1;
+  border-radius: 0 0 0 10px;
+}
+
+.bottom-section .cta .price {
+  display: flex;
+  align-items: center;
+}
+
+.bottom-section .cta .price p {
+  margin: 0 0 0 10px;
+}
+
+.bottom-section .cta button {
+  color: white;
+  background-color: var(--yellow);
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  height: 45px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.bottom-section .cta button:active {
+  background-color: white;
+  color: var(--yellow);
+  box-shadow: none;
+}
+
+.bottom-section .why-us {
+  background-color: var(--light-cyan);
+  padding: var(--card-margin);
+  flex: 1;
+  border-radius: 0 0 10px 0;
+}
+
+@media (max-width: 800px) {
+  main {
+    align-items: flex-start;
+    margin-top: 30px
+  }
+  .bottom-section {
+    flex-direction: column;
+  }
+
+  .bottom-section .cta {
+    border-radius: 0;
+  }
+
+  .bottom-section .why-us {
+    border-radius: 0 0 10px 10px;
+  }
+
+  button {
+    margin-top: 30px;
+  }
 }
